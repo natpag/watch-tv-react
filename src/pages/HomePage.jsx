@@ -19,11 +19,10 @@ const HomePage = (props) => {
   }, [])
   return (
     <>
-      <header>
-        <h1> Here are the top rated Tv Shows!</h1>
-      </header>
+      <h1>Show of the week!</h1>
+      <h1> Here are the top rated Tv Shows!</h1>
       <main>
-        <ul>
+        <ul class="main">
           {tvShows.map((tvShow) => {
             return (
               <TvShows

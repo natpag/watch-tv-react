@@ -8,5 +8,20 @@ html {
 
 body {
   margin: 0;
-  min-height: 100%;
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.showCard {
+  width: 15rem;
+  margin-right: 0;
+  padding: 0;
+}
+
+ul {
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 30% 30% 30%;
 }
