@@ -11,17 +11,27 @@ body {
   height: 100%;
 }
 
+h1 {
+  text-align: center;
+}
+
 li {
   list-style: none;
 }
 
 .showCard {
-  width: 15rem;
+  width: 10rem;
   margin-right: 0;
-  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-ul {
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 30% 30% 30%;
+section {
+  text-align: center;
+}
+
+p {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
 }

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import HelloWorld from '../components/HelloWorld'
 import axios from 'axios'
 import TvShows from '../components/TvShows'
 
 const HomePage = (props) => {
   const [tvShows, setTvShows] = useState([])
+  const [featured, setFeatured] = useState([])
 
   const getTvShows = async () => {
     const resp = await axios.get(
@@ -12,6 +14,9 @@ const HomePage = (props) => {
     )
     console.log(resp.data)
     setTvShows(resp.data.results)
+
+    const randomPick = Math.floor(Math.random() * 20)
+    setFeatured(resp.data.results[randomPick])
   }
 
   useEffect(() => {
@@ -20,20 +25,32 @@ const HomePage = (props) => {
   return (
     <>
       <h1>Show of the week!</h1>
+      <section>
+        <Link to={`/${featured.id}`}>
+          <section class="featuredSection">
+            <img
+              src={`http://image.tmdb.org/t/p/w154${featured.poster_path}`}
+            />
+            <p>{featured.original_name}</p>
+          </section>
+        </Link>
+      </section>
       <h1> Here are the top rated Tv Shows!</h1>
       <main>
-        <ul class="main">
-          {tvShows.map((tvShow) => {
-            return (
-              <TvShows
-                key={tvShow.id}
-                id={tvShow.id}
-                title={tvShow.original_name}
-                poster={tvShow.poster_path}
-              />
-            )
-          })}
-        </ul>
+        <section>
+          <ul>
+            {tvShows.map((tvShow) => {
+              return (
+                <TvShows
+                  key={tvShow.id}
+                  id={tvShow.id}
+                  title={tvShow.original_name}
+                  poster={tvShow.poster_path}
+                />
+              )
+            })}
+          </ul>
+        </section>
       </main>
     </>
   )

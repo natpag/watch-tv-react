@@ -1,33 +1,25 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
-import Page from './pages/TV'
-import Page2 from './pages/Page2'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
+import ShowPage from './pages/ShowPage'
 
 const App = () => {
   return (
     <Router>
       <header>
-        <h1>Welcome to my SPA</h1>
         <nav>
-          <ul>
+          <ul class="navList">
             <li>
               <Link to="/">Go Home</Link>
             </li>
-            <li>
-              <Link to="/1">Page 1</Link>
-            </li>
-            <li>
-              <Link to="/2">Page 2</Link>
-            </li>
           </ul>
         </nav>
+        <h1>TOP RATED SHOWS!</h1>
       </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/1" component={Page}></Route>
-        <Route exact path="/2" component={Page2}></Route>
+        <Route exact path="/details" component={ShowPage}></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>
     </Router>

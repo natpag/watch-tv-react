@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import ShowPage from '../pages/ShowPage'
 
 const PosterPath = 'http://image.tmdb.org/t/p/w154'
 
 const TvShows = (props) => {
   const { id, title, poster } = props
   return (
-    <li class="showCard">
-      <Link to={`/tvShows/${id}`}>
+    <li>
+      <Link to={`/tvShows/${ShowPage}/${id}`}>
         <img src={`${PosterPath + poster}`} />
         <p>{title}</p>
       </Link>
