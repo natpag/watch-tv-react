@@ -4,16 +4,19 @@ import axios from 'axios'
 import TvShows from '../components/TvShows'
 
 const HomePage = (props) => {
-  const [tvShows, setTvShows] = useState('')
+  const [tvShows, setTvShows] = useState([])
 
-  const getTopRatedTvShows = async () => {
+  const getTvShows = async () => {
     const resp = await axios.get(
       'https://api.themoviedb.org/3/tv/top_rated?api_key=d823df9c8122b53033fc4aa49b428224&language=en-US&page=1'
     )
     console.log(resp.data)
-    setTvShows(resp.data)
+    setTvShows(resp.data.results)
   }
 
+  useEffect(() => {
+    getTvShows()
+  }, [])
   return (
     <>
       <header>
@@ -21,8 +24,15 @@ const HomePage = (props) => {
       </header>
       <main>
         <ul>
-          {tvShows.map((tvShows) => {
-            return <TvShows id={tvShows.id} title={tvShows.title} />
+          {tvShows.map((tvShow) => {
+            return (
+              <TvShows
+                key={tvShow.id}
+                id={tvShow.id}
+                title={tvShow.original_name}
+                poster={tvShow.poster_path}
+              />
+            )
           })}
         </ul>
       </main>
