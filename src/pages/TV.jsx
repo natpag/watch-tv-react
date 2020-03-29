@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Page = () => {
+const TV = () => {
   return <div>This is a Page</div>
 }
 
-export default Page
+export default TV
