@@ -27,20 +27,20 @@ const HomePage = () => {
     <>
       <h1>TOP RATED SHOWS!</h1>
       <h1>Show of the week!</h1>
-      <section>
+      <section class="featured">
         <Link to={`/tv/${featured.id}`}>
-          <section class="featuredSection">
+          <section>
             <img
               src={`http://image.tmdb.org/t/p/w154${featured.poster_path}`}
             />
-            <p>{featured.original_name}</p>
+            <p class="info">{featured.original_name}</p>
           </section>
         </Link>
       </section>
       <h1> Here are the top rated Tv Shows!</h1>
       <main>
-        <section>
-          <ul>
+        <section class="homepageBody">
+          <ul class="ulBody">
             {tvShows.map((tvShow) => {
               return (
                 <TvShows

@@ -29,9 +29,28 @@ const ShowPage = (props) => {
   }, [])
 
   return (
-    <main>
-      <h1>{showId}'s page</h1>
-    </main>
+    <section>
+      <section class="detailsSection">
+        <h1>{showDetails.name}</h1>
+        <img src={`http://image.tmdb.org/t/p/w154${showDetails.poster_path}`} />
+      </section>
+      <section class="overview">
+        <h2>Overview</h2>
+        <p class="overview">{showDetails.overview}</p>
+      </section>
+      <section class="cast">
+        <h2>Cast</h2>
+        <ul className="actors">
+          {cast.map((actor) => {
+            return (
+              <li>
+                {actor.name} as {actor.character}
+              </li>
+            )
+          })}
+        </ul>
+      </section>
+    </section>
   )
 }
 

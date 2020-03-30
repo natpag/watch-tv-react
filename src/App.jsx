@@ -13,9 +13,6 @@ const App = () => {
             <li>
               <Link to="/">Go Home</Link>
             </li>
-            <li>
-              <Link to="/tv">ShowDetails</Link>
-            </li>
           </ul>
         </nav>
       </header>
