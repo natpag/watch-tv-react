@@ -8,7 +8,7 @@ const TvShows = (props) => {
   const { id, title, poster } = props
   return (
     <li>
-      <Link to={`/details/${id}`}>
+      <Link to={`/tv/${id}`}>
         <img src={`${PosterPath + poster}`} />
         <p>{title}</p>
       </Link>

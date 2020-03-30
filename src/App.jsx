@@ -14,14 +14,14 @@ const App = () => {
               <Link to="/">Go Home</Link>
             </li>
             <li>
-              <Link to="/details">ShowDetails</Link>
+              <Link to="/tv">ShowDetails</Link>
             </li>
           </ul>
         </nav>
       </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/details/:id/" component={ShowPage}></Route>
+        <Route exact path="/tv/:id/" component={ShowPage}></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>
     </Router>

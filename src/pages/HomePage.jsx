@@ -28,7 +28,7 @@ const HomePage = () => {
       <h1>TOP RATED SHOWS!</h1>
       <h1>Show of the week!</h1>
       <section>
-        <Link to={`/details/${featured.id}`}>
+        <Link to={`/tv/${featured.id}`}>
           <section class="featuredSection">
             <img
               src={`http://image.tmdb.org/t/p/w154${featured.poster_path}`}
