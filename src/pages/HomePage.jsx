@@ -3,8 +3,9 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import HelloWorld from '../components/HelloWorld'
 import axios from 'axios'
 import TvShows from '../components/TvShows'
+import ShowPage from '../pages/ShowPage'
 
-const HomePage = (props) => {
+const HomePage = () => {
   const [tvShows, setTvShows] = useState([])
   const [featured, setFeatured] = useState([])
 
@@ -24,9 +25,10 @@ const HomePage = (props) => {
   }, [])
   return (
     <>
+      <h1>TOP RATED SHOWS!</h1>
       <h1>Show of the week!</h1>
       <section>
-        <Link to={`/${featured.id}`}>
+        <Link to={`/details/${featured.id}`}>
           <section class="featuredSection">
             <img
               src={`http://image.tmdb.org/t/p/w154${featured.poster_path}`}

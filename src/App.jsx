@@ -13,13 +13,15 @@ const App = () => {
             <li>
               <Link to="/">Go Home</Link>
             </li>
+            <li>
+              <Link to="/details">ShowDetails</Link>
+            </li>
           </ul>
         </nav>
-        <h1>TOP RATED SHOWS!</h1>
       </header>
       <Switch>
         <Route exact path="/" component={HomePage}></Route>
-        <Route exact path="/details" component={ShowPage}></Route>
+        <Route exact path="/details/:id/" component={ShowPage}></Route>
         <Route path="*" component={NotFound}></Route>
       </Switch>
     </Router>
