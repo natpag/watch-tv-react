@@ -29,7 +29,7 @@ const ShowPage = (props) => {
   }, [])
 
   return (
-    <section>
+    <section className="showPage">
       <section class="detailsSection">
         <h1>{showDetails.name}</h1>
         <img src={`http://image.tmdb.org/t/p/w154${showDetails.poster_path}`} />
